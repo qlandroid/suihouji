@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+   >
+    <ImageView
+        android:id="@+id/main_recycler_item_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/nav_finance_3"
+        />
+    <LinearLayout
+        android:layout_toRightOf="@+id/main_recycler_item_iv"
+        android:id="@+id/main_title_layout"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/main_recycler_item_title_tv"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="今天"/>
+        <TextView
+            android:id="@+id/main_recycler_item_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016年10月18号 "/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_item_outlay_layout"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/main_recycler_item_icon_iv"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/main_recycler_item_budget_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00"/>
+        <TextView
+            android:id="@+id/main_recycler_item_outlay_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00.00"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/main_recycler_item_financing_tv"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/main_recycler_item_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/main_recycler_item_icon_iv"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finance_wallet_arrow_right"/>
+</RelativeLayout>

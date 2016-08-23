@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="main_bottom_tab_tv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="main_bottom_tab_iv">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="main_bottom_tab_layout">
+        <item name="android:padding">2dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/main_bottom_tab_background</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    <style name="main_bottom_tab_item_layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="text_base">
+
+    </style>
+    <style name="main_content_base_tv" parent="text_base">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+    <style name="main_content_expend_number_tv" parent="main_content_base_tv">
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="main_content_income_title_tv" parent="main_content_base_tv">
+    </style>
+    <style name="main_content_budget_number_tv" parent="main_content_base_tv">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="main_content_top_iv_base_size">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">26dp</item>
+        <item name="android:layout_height">26dp</item>
+    </style>
+    <style name="main_content_message_iv" parent="main_content_top_iv_base_size">
+
+    </style>
+    <style name="main_content_take_notes_iv" parent="main_content_top_iv_base_size">
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+    <style name="main_content_message_red_iv_size">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+    </style>
+    <style name="main_content_show_hide_iv">
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+    </style>
+</resources>

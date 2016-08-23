@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">我的记账本</string>
+    <string name="main_bottom_tab_0">流水</string>
+    <string name="main_bottom_tab_1">账户</string>
+    <string name="main_bottom_tab_2">图标</string>
+    <string name="main_bottom_tab_3">理财</string>
+    <string name="main_bottom_tab_4">更多</string>
+</resources>
