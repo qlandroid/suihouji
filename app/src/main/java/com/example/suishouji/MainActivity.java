@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import com.example.suishouji.interfaces.maintop.ChangeMainTopContentInterface;
 import com.example.suishouji.interfaces.maintop.ShowMainTopContentInterface;
 import com.example.suishouji.utils.RecyclerViewDivider;
 import com.example.suishouji.utils.maintop.ShowMainToContentFragmentUtils;
+import com.example.suishouji.slidingmenu.lib.SlidingMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,8 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity implements ChangeMainTopContentInterface{
 
 
-    private final float CONTENT_HEIGHT = 2 / 5f;
+    private final float CONTENT_HEIGHT = 0.4f;
+    private final float MENU_WIDTH = 3/5f;
     @Bind(R.id.main_top_frame_layout)
     FrameLayout mainTopFrameLayout;
     @Bind(R.id.main_write_note)
@@ -94,8 +97,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         ButterKnife.bind(this);
         init();
 
-        initContentTopSize(UIWidth, UIHeight);
-        initRecyclerView();
+
         recyclerUpdata(mList);
         showTopContentFragment();
     }
@@ -109,8 +111,25 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         UIWidth = getResources().getDisplayMetrics().widthPixels;
         UIHeight = getResources().getDisplayMetrics().heightPixels;
         mShowMainTop =new ShowMainToContentFragmentUtils(this);
+        initContentTopSize(UIWidth, UIHeight);
+        initRecyclerView();
+        initSlidingMenu();
     }
 
+    private void initSlidingMenu() {
+        SlidingMenu menu = new SlidingMenu(this);
+        //设置左菜单；
+        menu.setMode(SlidingMenu.LEFT);
+        View menuView =LayoutInflater.from(this).inflate(R.layout.main_menu_layout,null,false);
+        //设置布局
+        menu.setMenu(menuView);
+        //设置手势开启菜单和关闭
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.setTouchModeBehind(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        //设置菜单显示宽度；
+        menu.setBehindWidth(getShowMenuWidth());
+        menu.attachToActivity(this,SlidingMenu.SLIDING_WINDOW);
+    }
 
 
     private void recyclerUpdata(List<MainBean> mList) {
@@ -134,7 +153,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     private void initContentTopSize(int UIWidth, int UIHeight) {
         ViewGroup.LayoutParams layoutParams = mainTopFrameLayout.getLayoutParams();
         layoutParams.width = UIWidth;
-        layoutParams.height = (int) (UIHeight * CONTENT_HEIGHT);
+        layoutParams.height = getTopContentHeight(UIHeight);
     }
 
 
@@ -158,5 +177,14 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     public void changeTopContentTheme() {
         //更改TOPContent类型；
         mShowMainTop.showTopContentFragment(mFragmentManager,R.id.main_top_frame_layout);
+    }
+
+    public int getShowMenuWidth() {
+
+        return (int)(UIWidth * MENU_WIDTH);
+    }
+
+    public int getTopContentHeight(int UIHeight) {
+        return (int)(UIHeight * CONTENT_HEIGHT);
     }
 }

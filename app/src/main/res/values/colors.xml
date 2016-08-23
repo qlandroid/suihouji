@@ -6,4 +6,9 @@
     <color name="colorRecyclerDivider">#e4e4e4</color>
     <color name="colorText">#fff</color>
     <color name="main_bottom_tab_background">#5c5e61</color>
+    <color name="main_recycler_item_pressed_true">#70fffd83</color>
+    <color name="main_recycler_item_pressed_false">#fff</color>
+
+    <color name="main_recycler_item_outlay_tv">#33916f</color>
+    <color name="main_recycler_item_budget_tv">#b75144</color>
 </resources>

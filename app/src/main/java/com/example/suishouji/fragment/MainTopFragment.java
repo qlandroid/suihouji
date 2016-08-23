@@ -19,4 +19,9 @@ public class MainTopFragment extends Fragment {
         View mainTopView = inflater.inflate(R.layout.main_top_fragment_layout,container,false);
         return mainTopView;
     }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
 }

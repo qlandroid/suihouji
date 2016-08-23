@@ -3,7 +3,7 @@
     android:id="@+id/main_content_layout"
     android:padding="10dp"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     android:background="@drawable/head_report_business_trip_bg">
     <ImageView
         android:layout_alignParentRight="true"
@@ -49,9 +49,10 @@
             android:id="@+id/main_content_expend_number_tv"
             style="@style/main_content_expend_number_tv"
             android:text="0.00"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/main_content_show_hide_iv"
             style="@style/main_content_show_hide_iv"
+            android:background="#00ffffff"
             android:src="@drawable/main_content_show_hide_number_iv"/>
     </LinearLayout>
 
