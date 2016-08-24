@@ -49,11 +49,13 @@
             android:id="@+id/main_content_expend_number_tv"
             style="@style/main_content_expend_number_tv"
             android:text="0.00"/>
-        <ImageButton
+        <com.example.suishouji.view.ShowHideNumberImageView
             android:id="@+id/main_content_show_hide_iv"
             style="@style/main_content_show_hide_iv"
-            android:background="#00ffffff"
-            android:src="@drawable/main_content_show_hide_number_iv"/>
+            android:background="@drawable/main_content_show_hide_number_iv"
+            xmlns:show="http://schemas.android.com/apk/res-auto"
+            show:showClickTrueImage="@drawable/travel_book_hide_money_false"
+            show:showClickFalseImage="@drawable/travel_book_hide_money_true"/>
     </LinearLayout>
 
     <ImageView

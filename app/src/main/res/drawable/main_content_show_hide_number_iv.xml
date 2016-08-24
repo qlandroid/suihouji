@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="false" android:drawable="@drawable/password_visiable"/>
-    <item android:state_selected="true" android:drawable="@drawable/password_hide"/>
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+   <corners android:radius="30dp"/><solid android:color="#4bb9b9b9"/>
+</shape>

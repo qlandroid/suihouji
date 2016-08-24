@@ -43,5 +43,15 @@
         <attr name="selectorEnabled" format="boolean" />
         <attr name="selectorDrawable" format="reference" />
     </declare-styleable>
+    <declare-styleable name="ShowHideNumberImageView">
+        <attr name="showClickTrueImage" format="reference"/>
+        <attr name="showClickFalseImage" format="reference"/>
+    </declare-styleable>
+    <!--自定义圆头像属性-->
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_inside_color" format="color" />
+        <attr name="border_outside_color" format="color"/>
+    </declare-styleable>
 
 </resources>
