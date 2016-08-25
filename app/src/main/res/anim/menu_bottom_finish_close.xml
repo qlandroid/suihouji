@@ -3,5 +3,5 @@
     <alpha android:fromAlpha="0.5"
         android:toAlpha="0"
         android:fillAfter="false"
-        android:duration="200"/>
+        android:duration="100"/>
 </set>

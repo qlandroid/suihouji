@@ -1,5 +1,6 @@
 package com.example.suishouji;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -176,6 +177,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
             case R.id.main_bottom_show_menu_iv:
                 break;
             case R.id.main_bottom_tab_0:
+                startActivity(new Intent(this,CostActivity.class));
                 break;
             case R.id.main_bottom_tab_1:
                 break;
@@ -185,6 +187,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
                 break;
             case R.id.main_bottom_tab_4:
                 break;
+
         }
     }
 
