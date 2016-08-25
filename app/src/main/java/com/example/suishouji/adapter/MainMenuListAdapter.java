@@ -2,9 +2,15 @@ package com.example.suishouji.adapter;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.suishouji.MainActivity;
 import com.example.suishouji.R;
@@ -17,36 +23,75 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/8/24.
  */
-public class MainMenuListAdapter extends CommonAdapter<String> implements ItemMoveListView.OnMoveListener{
-
-    public MainMenuListAdapter(Context context, List<String> data, int layoutId) {
-        super(context, data, layoutId);
+public class MainMenuListAdapter extends BaseAdapter{
+    private List<String> mData;
+    private Context mContext;
+    private boolean openSetting = false;
+    public int clickPostion = 0;
+    public MainMenuListAdapter(Context mContext) {
+        this.mContext = mContext;
     }
 
-    private static final String TAG = "MainMenuListAdapter";
+    public void update(List<String> mData){
+        this.mData =mData;
+    }
+
+
     @Override
-    public void setItemContent(ViewHolder holder, String s, int position) {
-        holder.setText(R.id.main_menu_list_item_book_name_tv,s);
-        ImageView iv = holder.getViewById(R.id.main_menu_list_item_book_iv);
-        holder.getViewById(R.id.main_menu_list_item_book_name_tv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i(TAG, "onClick:item 被点击 ");
-            }
-        });
-
-
+    public int getCount() {
+        return mData == null ? 0 :mData.size();
     }
 
     @Override
-    public void remove(String postion) {
-        data.remove(postion);
+    public Object getItem(int position) {
+        return mData.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final ItemViewHolder holder ;
+        if (convertView == null){
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.main_menu_list_item,parent,false);
+            holder = new ItemViewHolder(convertView);
+            convertView.setTag(holder);
+        }else {
+            holder = (ItemViewHolder) convertView.getTag();
+        }
+        if (!openSetting)
+            holder.view.setVisibility((clickPostion == position)?View.VISIBLE:View.GONE);
+        showLayout(holder);
+
+        return convertView;
+    }
+
+    private void showLayout(ItemViewHolder holder) {
+        holder.openLayout.setVisibility(openSetting?View.VISIBLE:View.GONE);
+        holder.normalLayout.setVisibility(openSetting?View.GONE: View.VISIBLE);
+    }
+
+    public void openSetting(){
+        openSetting = true;
         this.notifyDataSetChanged();
     }
-
-    @Override
-    public void insertItem(int position, String itemData) {
-        data.add(position,itemData);
+    public void colseSetting(){
+        openSetting = false;
         this.notifyDataSetChanged();
+    }
+    static class ItemViewHolder {
+        LinearLayout openLayout;
+        TextView bookNameTxteView;
+        RelativeLayout normalLayout;
+        View view;
+        public ItemViewHolder(View view) {
+            this.view = view.findViewById(R.id.main_menu_list_item_view);
+            normalLayout = (RelativeLayout) view.findViewById(R.id.main_menu_list_item_normal_layout);
+            openLayout = (LinearLayout)view.findViewById(R.id.main_menu_list_item_open_layout);
+            bookNameTxteView = (TextView) view.findViewById(R.id.main_menu_list_item_book_name_normal_tv);
+        }
     }
 }

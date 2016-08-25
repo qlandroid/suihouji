@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -17,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.suishouji.R;
+import com.example.suishouji.adapter.MainMenuListAdapter;
 import com.example.suishouji.view.ItemMoveListView;
 import com.example.suishouji.view.MenuButton;
 import com.example.suishouji.view.RoundImageView;
@@ -62,6 +64,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
     private int type_btn;
     private static final int TYPE_BUTTON_OPEN = 0;
     private static final int TYPE_BUTTON_CLOSE= 1;
+    private MainMenuListAdapter adapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,13 +85,20 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
 
         menuBottomFinishBtn.setOnClickListener(this);
         menuBottomEditBtn.setOnClickListener(this);
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
-            list.add("item ---->"+i);
-
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_expandable_list_item_1,list);
+        adapter = new MainMenuListAdapter(getContext());
         menuNotesListView.setAdapter(adapter);
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i <50; i++) {
+            list.add("item-->" +i );
+        }
+        adapter.update(list);
+        menuNotesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                adapter.clickPostion = position;
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
     @Override
@@ -104,11 +114,14 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
             case R.id.menu_bottom_edit_btn://编辑
                 type_btn = TYPE_BUTTON_OPEN;
                 openFinshButton();
-
+                finishBtnOpenClose(true);
+                adapter.openSetting();
                 break;
             case R.id.menu_bottom_finish_btn://添加完成
                 type_btn = TYPE_BUTTON_CLOSE;
+                finishBtnOpenClose(false);
                 closeFinshButton();
+                adapter.colseSetting();
                 break;
         }
     }
@@ -117,14 +130,12 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
         Animation closeAnimation =AnimationUtils.loadAnimation(getContext(),R.anim.menu_bottom_finish_close);
         closeAnimation.setAnimationListener(this);
         menuBottomFinishBtn.startAnimation(closeAnimation);
-        menuBottomLayout.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.menu_bottom_layout_open));
     }
 
     private void openFinshButton() {
         Animation openAnimation =AnimationUtils.loadAnimation(getContext(),R.anim.menu_bottom_layout_close);
         openAnimation.setAnimationListener(this);
         menuBottomLayout.startAnimation(openAnimation);
-        menuBottomFinishBtn.startAnimation(AnimationUtils.loadAnimation(getContext(),R.anim.menu_bottom_finish_open));
 
     }
 

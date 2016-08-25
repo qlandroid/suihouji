@@ -6,12 +6,7 @@
         </shape>
     </item>
     <item android:state_pressed="true">
-        <color android:color="#45fffb15"/>
+        <color android:color="#caff2b"/>
     </item>
-    <item android:state_selected="true">
-        <color android:color="#45fffb15"/>
-    </item>
-    <item android:state_checked="true">
-        <color android:color="#45fffb15"/>
-    </item>
+
 </selector>
