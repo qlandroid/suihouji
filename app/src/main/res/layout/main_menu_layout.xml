@@ -1,109 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#fff"
-    android:layout_height="match_parent">
+    android:clickable="true"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/menu_user_message_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <com.example.suishouji.view.RoundImageView
-            android:layout_margin="20dp"
             android:id="@+id/menu_user_head_iv"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/icon_avatar_asking"/>
+            android:layout_margin="20dp"
+            android:src="@drawable/icon_avatar_asking" />
+
         <LinearLayout
-            android:layout_toRightOf="@+id/menu_user_head_iv"
-            android:layout_centerVertical="true"
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/menu_user_head_iv"
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/menu_user_name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
+                android:text="name"
                 android:textColor="#000"
-                android:text="name"/>
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/menu_user_account_tv"
-                android:textSize="12sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="account"/>
+                android:text="account"
+                android:textSize="12sp" />
         </LinearLayout>
     </RelativeLayout>
+
     <ImageView
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/menu_user_message_layout"
-        android:layout_alignBottom="@+id/menu_user_message_layout"
         android:id="@+id/menu_user_upload_iv"
-        android:layout_marginRight="20dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/select_menu_upload_iv"/>
+        android:layout_alignBottom="@+id/menu_user_message_layout"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/menu_user_message_layout"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/select_menu_upload_iv" />
+
     <View
-        android:layout_below="@+id/menu_user_message_layout"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:layout_below="@+id/menu_user_message_layout"
         android:background="#e4e4e4" />
+
     <TextView
         android:id="@+id/menu_sync_title_tv"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/menu_user_message_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="同步账本"/>
+        android:layout_below="@+id/menu_user_message_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="同步账本" />
+
     <ListView
         android:id="@+id/menu_notes_list_view"
-        android:layout_below="@+id/menu_sync_title_tv"
-        android:layout_above="@+id/menu_bottom_layout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <LinearLayout
-        android:id="@+id/menu_bottom_layout"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <FrameLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-            <TextView
-                android:onClick="textViewclick"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:clickable="true"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/selector_menu_bottom_btn_edit_image"
-                android:textColor="@drawable/selector_menu_bottom_btn_text_color"
-                android:text="编辑"/>
-        </FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menu_bottom"
+        android:layout_below="@+id/menu_sync_title_tv" />
 
-        <View
-            android:layout_width="0.5dp"
-            android:background="#e4e4e4"
-            android:layout_height="match_parent"
-            />
-        <FrameLayout
-            android:layout_weight="1"
+    <LinearLayout
+        android:id="@+id/menu_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/menu_bottom_finish_btn"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/menu_bottom_btn_background"
+            android:clickable="true"
+            android:visibility="gone"
+            menuButton:imageFalse="@drawable/icon_main_drawer_menu_finish_normal"
+            menuButton:imageSize="30dp"
+            menuButton:text="完成"
+            menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
+            menuButton:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/menu_bottom_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/text1"
-                android:textSize="20sp"
-                android:gravity="center"
+
+
+            <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/menu_bottom_edit_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_bottom_btn_background"
                 android:clickable="true"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/selector_menu_bottom_btn_add_image"
-                android:textColor="@drawable/selector_menu_bottom_btn_text_color"
-                android:text="添加"/>
-        </FrameLayout>
+                menuButton:imageFalse="@drawable/icon_main_drawer_menu_edit_normal"
+                menuButton:imageSize="30dp"
+                menuButton:text="编辑"
+                menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
+                menuButton:textSize="20sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#e4e4e4" />
+
+            <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/menu_add_finish_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/menu_bottom_btn_background"
+                android:clickable="true"
+                menuButton:imageFalse="@drawable/icon_main_drawer_menu_add_normal"
+                menuButton:imageSize="30dp"
+                menuButton:text="添加"
+                menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
+                menuButton:textSize="20sp" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

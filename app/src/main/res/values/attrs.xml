@@ -53,5 +53,16 @@
         <attr name="border_inside_color" format="color" />
         <attr name="border_outside_color" format="color"/>
     </declare-styleable>
-
+    <!--menubutton属性-->
+    <declare-styleable name="MenuButton">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="textTrueColor" format="color|reference"/>
+        <attr name="textFalseColor" format="color|reference"/>
+        <attr name="imageTrue" format="reference"/>
+        <attr name="imageFalse" format="reference"/>
+        <attr name="image" format="reference"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="imageSize" format="dimension"/>
+    </declare-styleable>
 </resources>

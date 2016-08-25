@@ -12,16 +12,19 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.suishouji.adapter.MainMenuListAdapter;
 import com.example.suishouji.adapter.MainRecyclerAdapter;
 import com.example.suishouji.base.BaseActivity;
 import com.example.suishouji.bean.MainBean;
+import com.example.suishouji.fragment.MenuFragment;
 import com.example.suishouji.interfaces.maintop.ChangeMainTopContentInterface;
 import com.example.suishouji.interfaces.maintop.ShowMainTopContentInterface;
-import com.example.suishouji.slidingmenu.lib.SlidingMenu;
 import com.example.suishouji.utils.RecyclerViewDivider;
 import com.example.suishouji.utils.maintop.ShowMainToContentFragmentUtils;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +50,8 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     RecyclerView mainRvList;
     @Bind(R.id.main_custom_made_btn)
     Button mainCustomMadeBtn;
+    @Bind(R.id.main_bottom_show_menu_iv)
+    ImageButton mainBottomShowMenuIv;
     @Bind(R.id.main_bottom_tab_iv_0)
     ImageView mainBottomTabIv0;
     @Bind(R.id.main_bottom_tab_tv_0)
@@ -79,10 +84,9 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     LinearLayout mainBottomTab4;
     @Bind(R.id.main_bottom_tab)
     LinearLayout mainBottomTab;
-    @Bind(R.id.main_bottom_show_menu_iv)
-    ImageButton mainBottomShowMenuIv;
 
-    private int[] tabs = {R.id.main_bottom_show_menu_iv,R.id.main_bottom_tab_0,
+
+    private int[] tabs = {R.id.main_bottom_show_menu_iv, R.id.main_bottom_tab_0,
             R.id.main_bottom_tab_1,
             R.id.main_bottom_tab_2,
             R.id.main_bottom_tab_3, R.id.main_bottom_tab_4};
@@ -91,6 +95,10 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     private List<MainBean> mList = new ArrayList<>();
     private FragmentManager mFragmentManager;
     private ShowMainTopContentInterface mShowMainTop;
+    private View menuView;
+    private List<String> mMenuData;
+    private MainMenuListAdapter mMainMenuListAdapter;
+    private ListView menuNotesListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,9 +108,9 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         init();
 
 
-
         recyclerUpdata(mList);
         showTopContentFragment();
+
     }
 
     private void showTopContentFragment() {
@@ -116,25 +124,27 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         mShowMainTop = new ShowMainToContentFragmentUtils(this);
         initContentTopSize(UIWidth, UIHeight);
         initRecyclerView();
+
         initSlidingMenu();
     }
 
     private void initSlidingMenu() {
         SlidingMenu menu = new SlidingMenu(this);
+
         //设置左菜单；
         menu.setMode(SlidingMenu.LEFT);
-        View menuView = LayoutInflater.from(this).inflate(R.layout.main_menu_layout, null, false);
+        menuView = LayoutInflater.from(this).inflate(R.layout.menu_layout,null,false);
+        getSupportFragmentManager().beginTransaction().add(R.id.menu_frame_layout,new MenuFragment()).commit();
+        //menuView = LayoutInflater.from(this).inflate(R.layout.main_menu_layout, null, false);
         //设置布局
         menu.setMenu(menuView);
         //设置手势开启菜单和关闭
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        menu.setTouchModeBehind(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.setTouchModeBehind(SlidingMenu.TOUCHMODE_MARGIN);
         //设置菜单显示宽度；
         menu.setBehindWidth(getShowMenuWidth());
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
     }
-
-
     private void recyclerUpdata(List<MainBean> mList) {
         for (int i = 0; i < 5; i++) {
             MainBean bean = new MainBean();
@@ -160,7 +170,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     }
 
 
-    @OnClick({R.id.main_bottom_show_menu_iv,R.id.main_bottom_tab_0, R.id.main_bottom_tab_1, R.id.main_bottom_tab_2, R.id.main_bottom_tab_3, R.id.main_bottom_tab_4})
+    @OnClick({R.id.main_bottom_show_menu_iv, R.id.main_bottom_tab_0, R.id.main_bottom_tab_1, R.id.main_bottom_tab_2, R.id.main_bottom_tab_3, R.id.main_bottom_tab_4})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_bottom_show_menu_iv:
@@ -185,7 +195,6 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     }
 
     public int getShowMenuWidth() {
-
         return (int) (UIWidth * MENU_WIDTH);
     }
 
@@ -193,10 +202,5 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         return (int) (UIHeight * CONTENT_HEIGHT);
     }
 
-    @OnClick(R.id.main_bottom_show_menu_iv)
-    public void onClick() {
-    }
 
-    public void textViewclick(View view) {
-    }
 }

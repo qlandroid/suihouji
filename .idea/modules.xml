@@ -3,8 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/menu/library/library.iml" filepath="$PROJECT_DIR$/menu/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/menu/menu.iml" filepath="$PROJECT_DIR$/menu/menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menu/library/menu-library.iml" filepath="$PROJECT_DIR$/menu/library/menu-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slingmenu/slingmenu.iml" filepath="$PROJECT_DIR$/slingmenu/slingmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingmenu/slingmenu.iml" filepath="$PROJECT_DIR$/slidingmenu/slingmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slingmenu/library/slingmenu-library.iml" filepath="$PROJECT_DIR$/slingmenu/library/slingmenu-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingmenu/library/slingmenu-library.iml" filepath="$PROJECT_DIR$/slidingmenu/library/slingmenu-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slining/slining.iml" filepath="$PROJECT_DIR$/slining/slining.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slining/library/slining-library.iml" filepath="$PROJECT_DIR$/slining/library/slining-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/suishouji.iml" filepath="$PROJECT_DIR$/suishouji.iml" />
     </modules>
   </component>

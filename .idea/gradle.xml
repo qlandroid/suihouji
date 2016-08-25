@@ -12,6 +12,10 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/menu" />
             <option value="$PROJECT_DIR$/menu/library" />
+            <option value="$PROJECT_DIR$/slingmenu" />
+            <option value="$PROJECT_DIR$/slingmenu/library" />
+            <option value="$PROJECT_DIR$/slining" />
+            <option value="$PROJECT_DIR$/slining/library" />
           </set>
         </option>
         <option name="myModules">
@@ -20,6 +24,10 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/menu" />
             <option value="$PROJECT_DIR$/menu/library" />
+            <option value="$PROJECT_DIR$/slingmenu" />
+            <option value="$PROJECT_DIR$/slingmenu/library" />
+            <option value="$PROJECT_DIR$/slining" />
+            <option value="$PROJECT_DIR$/slining/library" />
           </set>
         </option>
       </GradleProjectSettings>
