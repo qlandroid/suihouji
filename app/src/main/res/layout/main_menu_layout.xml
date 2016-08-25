@@ -7,8 +7,9 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/menu_user_message_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.example.suishouji.view.RoundImageView
@@ -40,17 +41,18 @@
                 android:text="account"
                 android:textSize="12sp" />
         </LinearLayout>
-    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/menu_user_upload_iv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/menu_user_message_layout"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/menu_user_message_layout"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/select_menu_upload_iv" />
+        <ImageView
+            android:id="@+id/menu_user_upload_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/select_menu_upload_iv"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_alignTop="@+id/menu_user_head_iv"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -73,8 +75,12 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/menu_bottom"
         android:layout_below="@+id/menu_sync_title_tv" />
-
-    <LinearLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/menu_notes_list_view"
+        android:background="#e4e4e4" />
+    <FrameLayout
         android:id="@+id/menu_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -82,9 +88,8 @@
 
         <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
             android:id="@+id/menu_bottom_finish_btn"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:background="@drawable/menu_bottom_btn_background"
             android:clickable="true"
             android:visibility="gone"
@@ -96,6 +101,7 @@
 
         <LinearLayout
             android:id="@+id/menu_bottom_layout"
+            android:layout_gravity="center"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -120,7 +126,7 @@
                 android:background="#e4e4e4" />
 
             <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/menu_add_finish_btn"
+                android:id="@+id/menu_bottom_add_btn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -132,5 +138,5 @@
                 menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
                 menuButton:textSize="20sp" />
         </LinearLayout>
-    </LinearLayout>
+    </FrameLayout>
 </RelativeLayout>

@@ -15,7 +15,6 @@
             android:src="@drawable/selector_menu_bottom_btn_edit_image"/>
         <TextView
             android:id="@+id/menu_button_tv"
-            android:clickable="true"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

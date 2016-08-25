@@ -48,7 +48,7 @@ public class ItemMoveListView extends ListView {
                 int y = (int) ev.getY();
                 //获取需要移动的itemView的角标position
                 moveItemPostion = this.pointToPosition(x,y);
-                View moveItemView = getChildAt(moveItemPostion);
+                View moveItemView = getChildAt(moveItemPostion - getFirstVisiblePosition());
                 //当前手指点击位置
                 userMoveY = y - moveItemView.getTop();
                 actionBarHeight = (int) (ev.getRawY() - y);
@@ -56,7 +56,7 @@ public class ItemMoveListView extends ListView {
                 Bitmap bitmap = Bitmap.createBitmap(moveItemView.getDrawingCache());
 
                 startDrag(bitmap,y, userMoveY,actionBarHeight);
-                return true;
+                return false;
             }
 
 
@@ -74,12 +74,12 @@ public class ItemMoveListView extends ListView {
                 stopDrag();
                 //需要进行交换数据
                 changeDate(upY);
-                break;
+                return true;
             case MotionEvent.ACTION_MOVE://手指移动
                 int moveY = (int) ev.getY();
                 //需要重新绘图
                 dragShowMove(moveY);
-                break;
+                return true;
         }
 
         return super.onTouchEvent(ev);
@@ -125,8 +125,6 @@ public class ItemMoveListView extends ListView {
 
         moveImageView = new ImageView(getContext());
         moveImageView.setImageBitmap(bitmap);
-        bitmap.recycle();
-        bitmap = null;
         mWindowManager.addView(moveImageView,mLayoutParams);
     }
 
