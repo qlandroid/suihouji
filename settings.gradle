@@ -1,1 +1,2 @@
-include ':app', 'menu:library', 'slingmenu:library', 'slining:library'
+include ':app', 'menu:library', 'slingmenu:library', 'slining:library', ':xrecyclerview'
+include ':pullto:library'

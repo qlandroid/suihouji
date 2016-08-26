@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.suishouji.CostActivity">
-    <com.example.suishouji.view.CostListView
-        android:id="@+id/cost_list"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:background="@color/cost_top_background"
+        android:layout_height="?actionBarSize">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/abc_ic_ab_back_holo_dark"/>
+            <TextView
+                android:id="@+id/cost_title_tv"
+                android:textColor="@color/cost_top_text_color"
+                android:layout_marginLeft="4dp"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018年"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/cost_menu_search_iv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="26dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="26dp"
+                android:src="@drawable/cost_menu_search"/>
+            <ImageView
+                android:id="@+id/cost_menu_add_iv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="center"
+                android:src="@drawable/cost_menu_add_0"/>
+            <ImageView
+                android:id="@+id/cost_menu_other_iv"
+                android:layout_gravity="center_vertical"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/icon_action_bar_more"/>
+        </LinearLayout>
 
-    </com.example.suishouji.view.CostListView>
+    </FrameLayout>
 
-</RelativeLayout>
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawable="@drawable/pull_indicator_arrow"
+        ptr:ptrHeaderTextColor="@color/cost_top_text_color"
+        ptr:ptrMode="both" >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/cost_list_top_item"/>
+            <include layout="@layout/cost_list_bottom_item"/>
+        </LinearLayout>
+
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

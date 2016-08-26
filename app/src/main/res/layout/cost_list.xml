@@ -13,38 +13,100 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingTop="5dp">
-
-        <TextView
-            android:id="@+id/cost_month_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
+        <RelativeLayout
+            android:id="@+id/left"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="0dp"
-            android:includeFontPadding="false"
-            android:paddingBottom="0dp"
-            android:layout_alignParentTop="true"
-            android:gravity="end"
-
-            android:text="08"
-            android:textSize="24sp" />
-
-        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/cost_month_textView"
-            android:layout_toRightOf="@+id/cost_month_textView"
-            android:text="月"
-            android:gravity="start"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/cost_month_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="0dp"
+                android:includeFontPadding="false"
+                android:paddingBottom="0dp"
+                android:layout_alignParentTop="true"
+                android:gravity="end"
+                android:text="08"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/cost_time_content_textView"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/cost_month_textView"
+                android:layout_toRightOf="@+id/cost_month_textView"
+                android:text="月"
+                android:gravity="start"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/cost_time_content_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/cost_month_textView"
+                android:layout_below="@+id/cost_month_textView"
+                android:text="08.01-0.8.31"
+                android:textSize="10sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/cost_number_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/left"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/cost_month_textView"
-            android:layout_below="@+id/cost_month_textView"
-            android:text="08.01-0.8.31"
-            android:textSize="10sp" />
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff4242"
+                    android:text="收"/>
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ff4242"
+                    android:text="500.00"/>
+            </LinearLayout>
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/progress_bar_income"
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:progress="50"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0cb603"
+                    android:text="支"/>
+                <TextView
+                    android:layout_marginLeft="4dp"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0cb603"
+                    android:text="1600.00"/>
+            </LinearLayout>
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/progress_bar_expend"
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:progress="100"/>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"

@@ -15,4 +15,7 @@
 
     <color name="menu_bottom_btn_text_true_color">#f78b00</color>
     <color name="menu_bottom_btn_text_false_color">#d1b086</color>
+    
+    <color name="cost_top_background">#fbcd45</color>
+    <color name="cost_top_text_color">#b45724</color>
 </resources>

@@ -87,4 +87,15 @@
         <item name="android:textColor">@color/main_recycler_item_budget_tv</item>
     </style>
 
+    <style name="cost_top_base_tv">
+        <item name="android:textColor">@color/cost_top_text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="cost_top_number_tv" parent="cost_top_base_tv">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+
 </resources>
