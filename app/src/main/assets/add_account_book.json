@@ -1,0 +1,14 @@
+{
+  "bean" : [
+    {"name" : "标准理财","content" :"标准账本，分类较全","icon":"suite_bg_for_standard_0.png","type":"0"},
+    {"name" : "生意账本","content" :"帮你轻松大力生意流水账","icon":"suite_bg_for_business.png","type":"1"},
+    {"name" : "餐饮生意","content" :"轻松打理餐饮生意账，账目清晰赚钱快","icon":"suite_bg_for_catering.png","type":"1"},
+    {"name" : "旅游账本","content" :"适合出游，精心定制旅游分类","icon":"suite_bg_for_travel.png","type":"1"},
+    {"name" : "装修账本","content" :"装修必备，贴心为装修场景打造","icon":"suite_bg_for_fitment.png","type":"1"},
+    {"name" : "结婚账本","content" :"进入神圣殿堂前，记一记更幸福","icon":"suite_bg_for_marry.png","type":"1"},
+    {"name" : "汽车账本","content" :"轻松记录爱车消费","icon":"suite_bg_for_car.png","type":"1"},
+    {"name" : "宝宝账本","content" :"亲爱的宝宝","icon":"suite_bg_for_baby.png","type":"1"},
+    {"name" : "差旅账本","content" :"出差报销更省心，差旅认识的记账首选","icon":"suite_bg_for_business_trip.png","type":"1"},
+    {"name" : "人情记账","content" :"钻石恒久远，人情永流传","icon":"suite_bg_for_humanity.png","type":"1"}
+  ]
+}

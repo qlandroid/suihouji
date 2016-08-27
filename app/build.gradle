@@ -28,4 +28,6 @@ dependencies {
     compile project(':slining:library')
     compile project(':xrecyclerview')
     compile project(':pullto:library')
+    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.google.code.gson:gson:2.2.4'
 }

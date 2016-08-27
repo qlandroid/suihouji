@@ -1,5 +1,8 @@
 package com.example.suishouji.fragment;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +20,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.suishouji.AddAccountBookActivity;
 import com.example.suishouji.R;
 import com.example.suishouji.adapter.MainMenuListAdapter;
 import com.example.suishouji.view.ItemMoveListView;
@@ -65,6 +69,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
     private static final int TYPE_BUTTON_OPEN = 0;
     private static final int TYPE_BUTTON_CLOSE= 1;
     private MainMenuListAdapter adapter;
+    private final static int REQUEST_CODE_ADD = 10;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,6 +90,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
 
         menuBottomFinishBtn.setOnClickListener(this);
         menuBottomEditBtn.setOnClickListener(this);
+        menuBottomAddBtn.setOnClickListener(this);
+
         adapter = new MainMenuListAdapter(getContext());
         menuNotesListView.setAdapter(adapter);
         List<String> list = new ArrayList<>();
@@ -117,12 +124,25 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
                 finishBtnOpenClose(true);
                 adapter.openSetting();
                 break;
-            case R.id.menu_bottom_finish_btn://添加完成
+            case R.id.menu_bottom_finish_btn://编辑完成
                 type_btn = TYPE_BUTTON_CLOSE;
                 finishBtnOpenClose(false);
                 closeFinshButton();
                 adapter.colseSetting();
                 break;
+            case R.id.menu_bottom_add_btn://添加按钮
+                //
+                Intent intent = new Intent(getContext(), AddAccountBookActivity.class);
+                getActivity().startActivityForResult(intent,REQUEST_CODE_ADD);
+                break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_ADD&& resultCode == Activity.RESULT_OK){
+            //添加成功时回调的方法；
         }
     }
 

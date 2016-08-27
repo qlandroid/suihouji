@@ -5,4 +5,11 @@
     <string name="main_bottom_tab_2">图标</string>
     <string name="main_bottom_tab_3">理财</string>
     <string name="main_bottom_tab_4">更多</string>
+    <string name="add_account_book_activity_title">添加账本</string>
+    <string name="add_account_book_detail_account_name">账本名</string>
+    <string name="add_account_book_detail_account_name_hint">点击输入账本名称</string>
+    <string name="add_account_book_detail_theme">面板主题</string>
+    <string name="income">本月收入:</string>
+    <string name="expend">本月支出:</string>
+    <string name="budget_balance">预算余额:</string>
 </resources>

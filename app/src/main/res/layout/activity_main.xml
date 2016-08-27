@@ -52,8 +52,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_above="@+id/main_rv_list"
-                android:layout_height="1dp"
-                android:background="@color/colorRecyclerDivider"/>
+                android:layout_height="@dimen/view_divider"
+                android:background="@color/view_color"/>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/main_rv_list"
                 android:layout_below="@+id/main_btn_layout"
@@ -71,82 +71,7 @@
 
         </RelativeLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/main_bottom_tab"
-        style="@style/main_bottom_tab_layout"
-        >
-        <ImageButton
-            android:id="@+id/main_bottom_show_menu_iv"
-            android:layout_gravity="center"
-            android:layout_width="50dp"
-            android:clickable="true"
-            android:background="#00ffffff"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:src="@drawable/main_point"/>
-        <LinearLayout android:id="@+id/main_bottom_tab_0"
-            style="@style/main_bottom_tab_item_layout">
-            <ImageView
-                android:id="@+id/main_bottom_tab_iv_0"
-                style="@style/main_bottom_tab_iv"
-                android:src="@drawable/nav_year_trans_0"
-                />
-            <TextView
-                android:id="@+id/main_bottom_tab_tv_0"
-                style="@style/main_bottom_tab_tv"
-                android:text="@string/main_bottom_tab_0"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/main_bottom_tab_1"
-            style="@style/main_bottom_tab_item_layout">
-            <ImageView
-                android:id="@+id/main_bottom_tab_iv_1"
-                style="@style/main_bottom_tab_iv"
-                android:src="@drawable/nav_account_1"
-                />
-            <TextView
-                android:id="@+id/main_bottom_tab_tv_1"
-                style="@style/main_bottom_tab_tv"
-                android:text="@string/main_bottom_tab_1"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/main_bottom_tab_2"
-            style="@style/main_bottom_tab_item_layout">
-            <ImageView
-                android:id="@+id/main_bottom_tab_iv_2"
-                style="@style/main_bottom_tab_iv"
-                android:src="@drawable/nav_report_2"
-                />
-            <TextView
-                android:id="@+id/main_bottom_tab_tv_2"
-                style="@style/main_bottom_tab_tv"
-                android:text="@string/main_bottom_tab_2"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/main_bottom_tab_3"
-            style="@style/main_bottom_tab_item_layout">
-            <ImageView
-                android:id="@+id/main_bottom_tab_iv_3"
-                style="@style/main_bottom_tab_iv"
-                android:src="@drawable/nav_finance_3"
-                />
-            <TextView
-                android:id="@+id/main_bottom_tab_tv_3"
-                style="@style/main_bottom_tab_tv"
-                android:text="@string/main_bottom_tab_3"/>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/main_bottom_tab_4"
-            style="@style/main_bottom_tab_item_layout">
-            <ImageView
-                android:id="@+id/main_bottom_tab_iv_4"
-                style="@style/main_bottom_tab_iv"
-                android:src="@drawable/nav_setting_4" />
-            <TextView
-                android:id="@+id/main_bottom_tab_tv_4"
-                style="@style/main_bottom_tab_tv"
-                android:text="@string/main_bottom_tab_4"/>
-        </LinearLayout>
-
-    </LinearLayout>
+    <include layout="@layout/main_bottom_button_tab"/>
 
 
 </LinearLayout>
