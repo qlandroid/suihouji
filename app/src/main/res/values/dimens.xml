@@ -5,7 +5,7 @@
     <dimen name="action_bar_text_size">18sp</dimen>
     <dimen name="action_bar_text_padding_left">4dp</dimen>
     <dimen name="action_bar_padding">10dp</dimen>
-    <dimen name="action_bar_icon_size">26dp</dimen>
+    <dimen name="action_bar_icon_size">20dp</dimen>
     <dimen name="action_bar_icon_padding">10dp</dimen>
 
     <dimen name="view_divider">1dp</dimen>

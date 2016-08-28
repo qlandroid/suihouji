@@ -19,7 +19,7 @@ public class AddAccountBookData {
             R.drawable.suite_bg_for_car,
             R.drawable.suite_bg_for_baby,
             R.drawable.suite_bg_for_business_trip,
-            R.drawable.suite_bg_for_humanity,};
+            R.drawable.suite_bg_for_humanity};
     String[] names = {"标准理财", "生意账本", "餐饮生意", "旅游账本", "装修账本", "结婚账本",
             "汽车账本", "宝宝账本", "差旅账本", "人情记账"};
     String[] contents = {"标准账本，分类较全",
@@ -30,18 +30,16 @@ public class AddAccountBookData {
             "进入神圣殿堂前，记一记更幸福",
             "轻松记录爱车消费", "亲爱的宝宝", "出差报销更省心，差旅认识的记账首选",
             "钻石恒久远，人情永流传"};
+    int[] types ={-1,8,7,0,4,2,3,1,5,6};
 
-    public List<AddAccountBookBean.BeanBean> getdata(){
-        List<AddAccountBookBean.BeanBean> list = new ArrayList<>();
+    public List<AddAccountBookBean> getdata(){
+        List<AddAccountBookBean> list = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
-            AddAccountBookBean.BeanBean bean = new AddAccountBookBean.BeanBean();
+            AddAccountBookBean bean = new AddAccountBookBean();
             bean.setContent(contents[i]);
             bean.setIcon(icons[i]);
-            bean.setName(names[i]);
-            if (i == 0){
-                bean.setType(0);
-            }
-            bean.setType(1);
+            bean.setBookName(names[i]);
+            bean.setIconType(types[i]);
             list.add(bean);
 
         }

@@ -18,8 +18,9 @@
     
     <color name="cost_top_background">#fbcd45</color>
     <color name="action_bar_text_color">#b45724</color>
-
+    <color name="color_null">#00ff55ff</color>
+    <color name="action_bar_click_background">#b6b36135</color>
     <color name="button_click_background">#fff8d7</color>
-
-    <color name="base_background">#f8f8f8</color>
+    <color name="main_menu_bottom_button_select_color">#d1b086</color>
+    <color name="base_background">#00f8f8f8</color>
 </resources>

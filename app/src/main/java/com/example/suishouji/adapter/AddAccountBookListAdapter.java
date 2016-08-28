@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Administrator on 2016/8/26.
  */
 public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBookListAdapter.AddAccountViewHolder>implements View.OnClickListener {
-    private List<AddAccountBookBean.BeanBean> mList;
+    private List<AddAccountBookBean> mList;
     private Context mContext;
     private OnItemClickListener listener;
 
@@ -34,7 +34,7 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
 
         this.mContext = mContext;
     }
-    public void updata(List<AddAccountBookBean.BeanBean> mList){
+    public void updata(List<AddAccountBookBean> mList){
         this.mList = mList;
         this.notifyDataSetChanged();
     }
@@ -49,9 +49,9 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
     public void onBindViewHolder(AddAccountViewHolder holder, int position) {
         holder.itemView.setTag(position);
         holder.itemView.setOnClickListener(this);
-        AddAccountBookBean.BeanBean bean = mList.get(position);
+        AddAccountBookBean bean = mList.get(position);
         holder.contentTv.setText(bean.getContent());
-        holder.nameTv.setText(bean.getName());
+        holder.nameTv.setText(bean.getBookName());
         holder.iv.setImageResource(bean.getIcon());
     }
 

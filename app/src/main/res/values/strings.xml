@@ -12,4 +12,7 @@
     <string name="income">本月收入:</string>
     <string name="expend">本月支出:</string>
     <string name="budget_balance">预算余额:</string>
+    <string name="main_menu_bottom_button_add">添加</string>
+    <string name="main_menu_bottom_button_edit">编辑</string>
+    <string name="main_menu_bottom_button_finish">完成</string>
 </resources>

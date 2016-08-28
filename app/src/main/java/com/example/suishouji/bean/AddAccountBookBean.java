@@ -6,36 +6,36 @@ import java.util.List;
  * Created by Administrator on 2016/8/26.
  */
 public class AddAccountBookBean {
-
-    /**
-     * name : 标准理财
-     * content : 标准账本，分类较全
-     * icon : suite_bg_for_standard_0.png
-     * type : 0
-     */
-
-    private List<BeanBean> bean;
-
-    public List<BeanBean> getBean() {
-        return bean;
-    }
-
-    public void setBean(List<BeanBean> bean) {
-        this.bean = bean;
-    }
-
-    public static class BeanBean {
-        private String name;
+        private String bookName;
         private String content;
         private int icon;
-        private int type;
+        private int iconType;
+        private int textColor;
 
-        public String getName() {
-            return name;
+    public int getTextColor() {
+        return textColor;
+    }
+
+    public void setTextColor(int textColor) {
+        this.textColor = textColor;
+    }
+
+    @Override
+        public String toString() {
+            return "BeanBean{" +
+                    "bookName='" + bookName + '\'' +
+                    ", content='" + content + '\'' +
+                    ", icon=" + icon +
+                    ", iconType=" + iconType +
+                    '}';
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public String getBookName() {
+            return bookName;
+        }
+
+        public void setBookName(String bookName) {
+            this.bookName = bookName;
         }
 
         public String getContent() {
@@ -54,12 +54,12 @@ public class AddAccountBookBean {
             this.icon = icon;
         }
 
-        public int getType() {
-            return type;
+        public int getIconType() {
+            return iconType;
         }
 
-        public void setType(int type) {
-            this.type = type;
+        public void setIconType(int iconType) {
+            this.iconType = iconType;
         }
-    }
+
 }

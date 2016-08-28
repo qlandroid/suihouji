@@ -22,10 +22,14 @@ import com.example.suishouji.R;
 public class MenuButton extends FrameLayout {
     private ImageView mImageView;
     private TextView mTextView;
-    private int textTrueColor;
     private int textFalseColor;
-    private int imageTrue;
     private int imageFalse;
+    private int textTrueColor;
+    private int imageTrue;
+
+    public void setText(String content){
+        mTextView.setText(content);
+    }
 
     public MenuButton(Context context) {
         super(context);
@@ -53,14 +57,16 @@ public class MenuButton extends FrameLayout {
 
         String textContent = arrays.getString(R.styleable.MenuButton_text);
         float textSize =  arrays.getDimension(R.styleable.MenuButton_textSize,12);
-        int textColor = arrays.getColor(R.styleable.MenuButton_textColor, Color.TRANSPARENT);
+
         textFalseColor = arrays.getColor(R.styleable.MenuButton_textFalseColor, Color.TRANSPARENT);
+        textTrueColor = arrays.getColor(R.styleable.MenuButton_textTrueColor,Color.TRANSPARENT);
 
         mTextView.setText(textContent);
         mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,textSize);
         mTextView.setTextColor(textFalseColor);
 
         imageFalse = arrays.getResourceId(R.styleable.MenuButton_imageFalse,-1);
+        imageTrue = arrays.getResourceId(R.styleable.MenuButton_imageTrue,imageFalse);
         int imageSize = arrays.getDimensionPixelSize(R.styleable.MenuButton_imageSize,15);
 
         if (imageFalse != -1){
@@ -74,8 +80,54 @@ public class MenuButton extends FrameLayout {
 
     }
 
+    @Override
+    public boolean hasOnClickListeners() {
+        return super.hasOnClickListeners();
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int x = (int) event.getX();
+        int y = (int) event.getY();
+        int height = getHeight();
+        int width = getWidth();
 
 
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN://手指放下
+                setTrue();
+                break;
+            case MotionEvent.ACTION_UP://手指离开
+                setFalse();
+                break;
+            case MotionEvent.ACTION_MOVE://手指移动；
+                if (moveContent(x, y, height, width)){
+                    setTrue();
+                }else {
+                    setFalse();
+                }
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
 
+    private boolean moveContent(int x, int y, int height, int width) {
+        return y>0&& y<height && x>0&& x<width;
+    }
 
+    private void setTrue() {
+        mTextView.setTextColor(textTrueColor);
+        mImageView.setImageResource(imageTrue);
+    }
+
+    private void setFalse() {
+        mTextView.setTextColor(textFalseColor);
+        mImageView.setImageResource(imageFalse);
+    }
 }

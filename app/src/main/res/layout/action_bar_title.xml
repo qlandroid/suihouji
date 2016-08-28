@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/to_back"
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent">
-    <ImageView
-        android:paddingLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:src="@drawable/abc_ic_ab_back_holo_dark"/>
-    <TextView
-        android:id="@+id/action_bar_title_tv"
-        style="@style/action_bar_title_style"
-        android:text="@string/add_account_book_activity_title"/>
 
-</LinearLayout>
+<com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_vertical"
+    android:paddingLeft="@dimen/action_bar_padding"
+    menuButton:imageSize="@dimen/action_bar_icon_size"
+    menuButton:textSize="@dimen/action_bar_text_size"
+    menuButton:textTrueColor="@color/main_menu_bottom_button_select_color"
+    menuButton:textFalseColor="@color/action_bar_text_color"
+    menuButton:imageFalse="@drawable/abc_ic_ab_back_holo_dark"
+    android:id="@+id/to_back"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"/>

@@ -70,6 +70,7 @@
         android:text="同步账本" />
 
     <ListView
+        android:listSelector="@android:color/transparent"
         android:id="@+id/menu_notes_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,14 +91,14 @@
             android:id="@+id/menu_bottom_finish_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/menu_bottom_btn_click_background"
-            android:clickable="true"
             android:visibility="gone"
-            menuButton:imageFalse="@drawable/icon_main_drawer_menu_finish_normal"
             menuButton:imageSize="30dp"
-            menuButton:text="完成"
+            menuButton:textSize="20sp"
+            menuButton:textTrueColor="@color/main_menu_bottom_button_select_color"
             menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
-            menuButton:textSize="20sp" />
+            menuButton:imageFalse="@drawable/icon_main_drawer_menu_finish_normal"
+            menuButton:imageTrue="@drawable/icon_main_drawer_menu_finish_selected"
+            menuButton:text="@string/main_menu_bottom_button_finish"/>
 
         <LinearLayout
             android:id="@+id/menu_bottom_layout"
@@ -112,31 +113,33 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/menu_bottom_btn_click_background"
-                android:clickable="true"
-                menuButton:imageFalse="@drawable/icon_main_drawer_menu_edit_normal"
+                menuButton:text="@string/main_menu_bottom_button_edit"
                 menuButton:imageSize="30dp"
-                menuButton:text="编辑"
+                menuButton:textSize="20sp"
+                menuButton:textTrueColor="@color/main_menu_bottom_button_select_color"
                 menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
-                menuButton:textSize="20sp" />
+                menuButton:imageFalse="@drawable/icon_main_drawer_menu_edit_normal"
+                menuButton:imageTrue="@drawable/icon_main_drawer_menu_edit_selected"
+               />
 
             <View
-                android:layout_width="0.5dp"
+                android:layout_width="@dimen/view_divider"
                 android:layout_height="match_parent"
-                android:background="#e4e4e4" />
+                android:background="@color/view_color" />
 
             <com.example.suishouji.view.MenuButton xmlns:menuButton="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/menu_bottom_add_btn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/menu_bottom_btn_click_background"
-                android:clickable="true"
-                menuButton:imageFalse="@drawable/icon_main_drawer_menu_add_normal"
+                menuButton:text="@string/main_menu_bottom_button_add"
                 menuButton:imageSize="30dp"
-                menuButton:text="添加"
+                menuButton:textSize="20sp"
+                menuButton:textTrueColor="@color/main_menu_bottom_button_select_color"
                 menuButton:textFalseColor="@color/menu_bottom_btn_text_true_color"
-                menuButton:textSize="20sp" />
+                menuButton:imageFalse="@drawable/icon_main_drawer_menu_add_normal"
+                menuButton:imageTrue="@drawable/icon_main_drawer_menu_add_selected"
+                android:id="@+id/menu_bottom_add_btn"
+                 />
         </LinearLayout>
     </FrameLayout>
 </RelativeLayout>
