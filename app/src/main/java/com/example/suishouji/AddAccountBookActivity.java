@@ -1,6 +1,5 @@
 package com.example.suishouji;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -60,15 +59,14 @@ public class AddAccountBookActivity extends BaseActivity implements AddAccountBo
     }
 
     private void initList() {
-        mList = new AddAccountBookData().getdata();
+        mList = new AddAccountBookData().getData();
     }
 
     @Override
     public void onItemClick(View view) {
         int position = (int) view.getTag();
-        int iconType = mList.get(position).getIconType();
-        String bookName = mList.get(position).getBookName();
-        mStartAndResult.startAddAccountBookActivity(this,iconType,bookName);
+        AddAccountBookBean itemBean = mList.get(position);
+        mStartAndResult.startAddAccountBookActivity(this,itemBean);
     }
 
     @Override

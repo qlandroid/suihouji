@@ -1,5 +1,7 @@
 package com.example.suishouji.utils;
 
+import android.graphics.Color;
+
 import com.example.suishouji.R;
 import com.example.suishouji.bean.AddAccountBookBean;
 
@@ -32,7 +34,7 @@ public class AddAccountBookData {
             "钻石恒久远，人情永流传"};
     int[] types ={-1,8,7,0,4,2,3,1,5,6};
 
-    public List<AddAccountBookBean> getdata(){
+    public List<AddAccountBookBean> getData(){
         List<AddAccountBookBean> list = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
             AddAccountBookBean bean = new AddAccountBookBean();
@@ -40,8 +42,10 @@ public class AddAccountBookData {
             bean.setIcon(icons[i]);
             bean.setBookName(names[i]);
             bean.setIconType(types[i]);
+            if(i == 7){
+                bean.setTextColor(Color.parseColor("#94a4d0"));
+            }
             list.add(bean);
-
         }
         return list;
     }

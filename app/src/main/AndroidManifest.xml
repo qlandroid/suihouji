@@ -20,9 +20,8 @@
         </activity>
         <activity android:name=".CostActivity" />
         <activity android:name=".AddAccountBookActivity" />
-        <activity android:name=".AddAccountBookDetailActivity">
-
-        </activity>
+        <activity android:name=".AddAccountBookDetailActivity"></activity>
+        <activity android:name=".FaceBoardActivity"></activity>
     </application>
 
 </manifest>

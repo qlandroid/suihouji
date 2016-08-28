@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@drawable/shape_faceboard_top"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="210dp"
+        android:layout_height="140dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/head_report_baby_bg" />
+
+    <TextView
+        android:id="@+id/text_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="效果预览" />
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/text_0"
+        android:layout_toLeftOf="@+id/icon"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/view_size_small"
+        android:background="@color/main_bottom_tab_background"/>
+
+    <TextView
+        android:id="@+id/text_1"
+        style="@style/face_board_top_board_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/expand"
+        android:layout_marginBottom="16dp"
+        android:text="@string/face_board_top_left_1" />
+
+    <View
+        android:id="@+id/view_budget_0"
+        android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
+        android:layout_alignTop="@+id/text_1"
+        android:layout_toRightOf="@+id/text_1"
+        android:layout_alignRight="@+id/budget"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginRight="19dp"
+        android:background="@drawable/shape_view_dotline"
+        style="@style/face_board_top_view_background"/>
+
+
+    <TextView
+        android:id="@+id/text_2"
+        style="@style/face_board_top_board_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/expand"
+        android:text="@string/face_board_top_left_2" />
+
+    <View
+        android:id="@+id/view_expand"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_alignTop="@+id/expand"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
+        android:layout_toLeftOf="@+id/expand"
+        android:layout_toRightOf="@id/text_2"
+        style="@style/face_board_top_view_background"/>
+
+
+    <TextView
+        android:id="@+id/expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/expand_number"
+        android:layout_alignLeft="@+id/expand_number"
+        android:text="@string/expend"
+        android:textSize="@dimen/face_board_top_icon_text_title_size" />
+
+    <TextView
+        android:id="@+id/expand_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/income"
+        android:layout_alignLeft="@+id/income"
+        android:text="200.00" />
+
+    <LinearLayout
+        android:id="@+id/income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/icon"
+        android:layout_alignLeft="@+id/icon"
+        android:layout_marginBottom="@dimen/face_board_top_icon_margin"
+        android:layout_marginLeft="@dimen/face_board_top_icon_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/income"
+            android:textSize="@dimen/face_board_top_icon_text_title_size" />
+
+        <TextView
+            android:id="@+id/income_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200.00"
+            android:textSize="@dimen/face_board_top_icon_text_number_size" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/budget_number"
+        android:layout_alignTop="@+id/budget_number"
+        android:layout_toLeftOf="@+id/budget_number"
+        android:gravity="center"
+        android:text="@string/budget_balance"
+        android:textSize="@dimen/face_board_top_icon_text_title_size" />
+
+    <TextView
+        android:id="@+id/budget_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/income"
+        android:layout_alignRight="@+id/icon"
+        android:layout_marginRight="@dimen/face_board_top_icon_margin"
+        android:text="200.00"
+        android:textSize="@dimen/face_board_top_icon_text_number_size" />
+
+    <View
+        android:id="@+id/view_budget"
+        android:layerType="software"
+        android:layout_width="100dp"
+        android:layout_below="@+id/view_budget_0"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/budget"
+        android:layout_alignRight="@+id/budget"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="-30dp"
+        android:background="@drawable/shape_view_dotline_shu" />
+
+    <TextView
+        android:id="@+id/text_3"
+        style="@style/face_board_top_board_text_style"
+        android:textSize="@dimen/face_board_top_left_text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/income"
+        android:text="@string/face_board_top_left_3" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:layout_alignTop="@+id/income"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
+        android:layout_toLeftOf="@id/expand"
+        android:layout_toRightOf="@id/text_3"
+        style="@style/face_board_top_view_background" />
+</RelativeLayout>

@@ -9,6 +9,14 @@
     <dimen name="action_bar_icon_padding">10dp</dimen>
 
     <dimen name="view_divider">1dp</dimen>
+    <dimen name="view_size_small">0.5dp</dimen>
+    <dimen name="text_view_base_size">16sp</dimen>
 
-    <dimen name="text_view_base_size">14sp</dimen>
+    <dimen name="face_board_top_icon_text_number_size">12sp</dimen>
+    <dimen name="face_board_top_icon_text_title_size">10sp</dimen>
+    <dimen name="face_board_top_icon_view_margin_left">20sp</dimen>
+    <dimen name="face_board_top_icon_view_margin_top">6sp</dimen>
+    <dimen name="face_board_top_icon_margin">8dp</dimen>
+    <dimen name="face_board_top_left_text_size">12sp</dimen>
+    <dimen name="face_board_content_title_paddingTop">20dp</dimen>
 </resources>

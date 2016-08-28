@@ -24,7 +24,7 @@
 
     <FrameLayout
         android:clickable="true"
-        android:background="@drawable/menu_bottom_btn_click_background"
+        android:background="@drawable/selector_button_click_background"
         android:id="@+id/account_book_name_layout"
         android:layout_width="match_parent"
         android:padding="16dp"
@@ -54,7 +54,7 @@
         android:layout_height="@dimen/view_divider"
         android:background="@color/view_color"/>
     <FrameLayout
-        android:background="@drawable/menu_bottom_btn_click_background"
+        android:background="@drawable/selector_button_click_background"
         android:padding="16dp"
         android:id="@+id/account_book_detail_theme"
         android:layout_width="match_parent"

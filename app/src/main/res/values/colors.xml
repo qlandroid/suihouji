@@ -9,18 +9,21 @@
     <color name="main_bottom_tab_background">#5c5e61</color>
     <color name="main_recycler_item_pressed_true">#70fffd83</color>
     <color name="main_recycler_item_pressed_false">#fff</color>
-
+    <color name="baseColor">#e4e4e4</color>
+    <color name="nullColor">#ededed</color>
     <color name="main_recycler_item_outlay_tv">#33916f</color>
     <color name="main_recycler_item_budget_tv">#b75144</color>
 
     <color name="menu_bottom_btn_text_true_color">#f78b00</color>
     <color name="menu_bottom_btn_text_false_color">#d1b086</color>
     
-    <color name="cost_top_background">#fbcd45</color>
+    <color name="action_bar_background">#fbcd45</color>
     <color name="action_bar_text_color">#b45724</color>
     <color name="color_null">#00ff55ff</color>
     <color name="action_bar_click_background">#b6b36135</color>
     <color name="button_click_background">#fff8d7</color>
     <color name="main_menu_bottom_button_select_color">#d1b086</color>
     <color name="base_background">#00f8f8f8</color>
+
+    <color name="face_board_top_left_text_color">#787878</color>
 </resources>

@@ -15,4 +15,13 @@
     <string name="main_menu_bottom_button_add">添加</string>
     <string name="main_menu_bottom_button_edit">编辑</string>
     <string name="main_menu_bottom_button_finish">完成</string>
+
+    <string name="face_board_top_left_1">面板数据1</string>
+    <string name="face_board_top_left_2">面板数据2</string>
+    <string name="face_board_top_left_3">面板数据3</string>
+
+    <string name="face_board_content_title_1">数据自定义</string>
+    <string name="face_board_content_title_2">背景图片选择</string>
+
+
 </resources>

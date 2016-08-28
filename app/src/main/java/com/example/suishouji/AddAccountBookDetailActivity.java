@@ -1,6 +1,7 @@
 package com.example.suishouji;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -17,9 +18,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AddAccountBookDetailActivity extends BaseActivity {
-    public static final String INTENT_KEY_TYPE = "icon";
+    public static final String INTENT_KEY_ICON_TYPE = "icon";
     public static final String INTENT_KEY_BOOK_NAME = "bookName";
-
+    public static final String INTENT_KEY_THEME_TEXT_COLOR = "themeTextColor";
     private static final String ACTION_BAR_TITLE = "添加";
     @Bind(R.id.to_back)
     MenuButton toBack;
@@ -33,8 +34,21 @@ public class AddAccountBookDetailActivity extends BaseActivity {
     ImageView bookIcon;
     @Bind(R.id.account_book_detail_theme)
     FrameLayout accountBookDetailTheme;
+    @Bind(R.id.tv1)
+    TextView tv1;
+    @Bind(R.id.tv2)
+    TextView tv2;
+    @Bind(R.id.tv3)
+    TextView tv3;
+    @Bind(R.id.tv4)
+    TextView tv4;
+    @Bind(R.id.tv5)
+    TextView tv5;
+    @Bind(R.id.tv6)
+    TextView tv6;
     private int mObtainIconType = 0;
     private String mObtainBookName;
+    private int mObtainThemeTextColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,32 +57,52 @@ public class AddAccountBookDetailActivity extends BaseActivity {
         ButterKnife.bind(this);
         obtainIconType();
 
-        initBookIcon();
+        init();
 
-        if (mObtainBookName != null){
-            toBack.setText(getTitle(mObtainBookName));
-        }
+
+    }
+    private void setThemeTextColor(int textColor){
+        tv1.setTextColor(textColor);
+        tv2.setTextColor(textColor);
+        tv3.setTextColor(textColor);
+        tv4.setTextColor(textColor);
+        tv5.setTextColor(textColor);
+        tv6.setTextColor(textColor);
     }
 
-    private String getTitle(String bookName){
-        return ACTION_BAR_TITLE+bookName;
+    private String getTitle(String bookName) {
+        return ACTION_BAR_TITLE + bookName;
     }
 
-    private void initBookIcon() {
-        IconUtils  icons = new IconUtils();
+    private void init() {
+        initThemeIcon();
+        setThemeTextColor(mObtainThemeTextColor);
+        initActionBarTitle();
+    }
+
+    private void initThemeIcon() {
+        IconUtils icons = new IconUtils();
         int icon = icons.getIcon(mObtainIconType);
         bookIcon.setImageResource(icon);
     }
 
+    private void initActionBarTitle() {
+        if (mObtainBookName != null) {
+            toBack.setText(getTitle(mObtainBookName));
+        }
+    }
+
     private void obtainIconType() {
         Intent obtainIntent = getIntent();
-        if (obtainIntent !=null){
-            mObtainIconType = obtainIntent.getIntExtra(INTENT_KEY_TYPE,0);
+        if (obtainIntent != null) {
+            mObtainIconType = obtainIntent.getIntExtra(INTENT_KEY_ICON_TYPE, 0);
             mObtainBookName = obtainIntent.getStringExtra(INTENT_KEY_BOOK_NAME);
+            mObtainThemeTextColor = obtainIntent.getIntExtra(INTENT_KEY_THEME_TEXT_COLOR, Color.WHITE);
         }
     }
 
     private static final String TAG = "AddAccountBookDetailActivity";
+
     @OnClick({R.id.to_back, R.id.account_book_detail_theme})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -77,6 +111,7 @@ public class AddAccountBookDetailActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.account_book_detail_theme:
+                startActivity(new Intent(this,FaceBoardActivity.class));
                 Toast.makeText(AddAccountBookDetailActivity.this, "被点击了", Toast.LENGTH_SHORT).show();
                 break;
         }

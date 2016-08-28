@@ -1,5 +1,7 @@
 package com.example.suishouji.bean;
 
+import android.graphics.Color;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,7 @@ public class AddAccountBookBean {
         private String content;
         private int icon;
         private int iconType;
-        private int textColor;
+        private int textColor = Color.WHITE;
 
     public int getTextColor() {
         return textColor;
