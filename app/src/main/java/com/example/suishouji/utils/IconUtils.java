@@ -52,5 +52,8 @@ public class IconUtils {
     public int getIconLength(){
         return icons.length;
     }
+    public int getPostion(int position){
+        return icons[position];
+    }
 
 }

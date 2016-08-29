@@ -41,7 +41,6 @@ public class AddAccountBookActivity extends BaseActivity implements AddAccountBo
         toBack.setText(ACTION_TITLE);
         init();
         initRecyclerView();
-
     }
 
     private void init() {
@@ -67,6 +66,7 @@ public class AddAccountBookActivity extends BaseActivity implements AddAccountBo
         int position = (int) view.getTag();
         AddAccountBookBean itemBean = mList.get(position);
         mStartAndResult.startAddAccountBookActivity(this,itemBean);
+        overridePendingTransition(R.anim.in_left,R.anim.out_right);
     }
 
     @Override

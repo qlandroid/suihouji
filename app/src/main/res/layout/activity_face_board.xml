@@ -34,9 +34,13 @@
         </LinearLayout>
     </FrameLayout>
 
-    <include layout="@layout/faceboard_top_layout" />
-
+    <include layout="@layout/face_board_top_layout" />
+    <View
+        android:id="@+id/viewShow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
     <ScrollView
+        android:id="@+id/face_board_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -165,6 +169,7 @@
             </FrameLayout>
             <include layout="@layout/view_divider"/>
             <android.support.v7.widget.RecyclerView
+                android:background="#fff"
                 android:id="@+id/icon_list"
                 android:padding="@dimen/action_bar_padding"
                 android:layout_width="match_parent"

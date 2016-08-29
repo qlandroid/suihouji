@@ -85,6 +85,8 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
     LinearLayout mainBottomTab4;
     @Bind(R.id.main_bottom_tab)
     LinearLayout mainBottomTab;
+    @Bind(R.id.viewShow)
+    View viewShow;
 
 
     private int[] tabs = {R.id.main_bottom_show_menu_iv, R.id.main_bottom_tab_0,
@@ -106,6 +108,8 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        showTop();
+
         init();
 
 
@@ -113,6 +117,16 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         showTopContentFragment();
 
     }
+
+    /**
+     * 解决recyclerView刷新抢占焦点，不能显示顶部；
+     */
+    private void showTop() {
+        viewShow.setFocusable(true);
+        viewShow.setFocusableInTouchMode(true);
+        viewShow.requestFocus();
+    }
+
 
     private void showTopContentFragment() {
         mShowMainTop.showTopContentFragment(mFragmentManager, R.id.main_top_frame_layout);
@@ -125,7 +139,6 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         mShowMainTop = new ShowMainToContentFragmentUtils(this);
         initContentTopSize(UIWidth, UIHeight);
         initRecyclerView();
-
         initSlidingMenu();
     }
 
@@ -134,10 +147,8 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
 
         //设置左菜单；
         menu.setMode(SlidingMenu.LEFT);
-        menuView = LayoutInflater.from(this).inflate(R.layout.menu_layout,null,false);
-        getSupportFragmentManager().beginTransaction().add(R.id.menu_frame_layout,new MenuFragment()).commit();
-        //menuView = LayoutInflater.from(this).inflate(R.layout.main_menu_layout, null, false);
-        //设置布局
+        menuView = LayoutInflater.from(this).inflate(R.layout.menu_layout, null, false);
+        getSupportFragmentManager().beginTransaction().add(R.id.menu_frame_layout, new MenuFragment()).commit();
         menu.setMenu(menuView);
         //设置手势开启菜单和关闭
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
@@ -146,6 +157,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
         menu.setBehindWidth(getShowMenuWidth());
         menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
     }
+
     private void recyclerUpdata(List<MainBean> mList) {
         for (int i = 0; i < 5; i++) {
             MainBean bean = new MainBean();
@@ -177,7 +189,7 @@ public class MainActivity extends BaseActivity implements ChangeMainTopContentIn
             case R.id.main_bottom_show_menu_iv:
                 break;
             case R.id.main_bottom_tab_0:
-                startActivity(new Intent(this,CostActivity.class));
+                startActivity(new Intent(this, CostActivity.class));
                 break;
             case R.id.main_bottom_tab_1:
                 break;

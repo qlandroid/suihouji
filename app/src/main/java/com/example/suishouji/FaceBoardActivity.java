@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.suishouji.adapter.FaceBoardIconAdapter;
 import com.example.suishouji.base.BaseActivity;
 import com.example.suishouji.view.MenuButton;
 
@@ -63,13 +65,48 @@ public class FaceBoardActivity extends BaseActivity {
     FrameLayout faceBoard3;
     @Bind(R.id.icon_list)
     RecyclerView iconList;
+    @Bind(R.id.face_board_scroll)
+    ScrollView faceBoardScroll;
+    @Bind(R.id.viewShow)
+    View viewShow;
+
+    private int UIWidth;
+    private int UIHeight;
+    private final static int SPAND_COUNT = 4;
+    private FaceBoardIconAdapter mIconListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_face_board);
         ButterKnife.bind(this);
+        initUISize();
+        initIconList();
+        faceBoardScroll.scrollTo(0, 0);
+        viewShow.setFocusable(true);
+        viewShow.setFocusableInTouchMode(true);
+        viewShow.requestFocus();
+    }
 
-        iconList.setLayoutManager(new GridLayoutManager(this, 4));
+    private void initIconList() {
+        iconList.setLayoutManager(new GridLayoutManager(this, SPAND_COUNT));
+        mIconListAdapter = new FaceBoardIconAdapter(this, getItemWidth());
+        iconList.setAdapter(mIconListAdapter);
+    }
+
+    private void initUISize() {
+        UIWidth = getResources().getDisplayMetrics().widthPixels;
+        UIHeight = getResources().getDisplayMetrics().heightPixels;
+    }
+
+    private int getItemWidth() {
+        return UIWidth / SPAND_COUNT;
+    }
+
+    @Override
+    public void finish() {
+        mIconListAdapter.finish();
+        super.finish();
+        overridePendingTransition(R.anim.finish_in_right, R.anim.finish_out_left);
     }
 }

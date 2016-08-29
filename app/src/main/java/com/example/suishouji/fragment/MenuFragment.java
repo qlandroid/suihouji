@@ -134,6 +134,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener ,Anim
                 //
                 Intent intent = new Intent(getContext(), AddAccountBookActivity.class);
                 getActivity().startActivityForResult(intent,REQUEST_CODE_ADD);
+                getActivity().overridePendingTransition(R.anim.in_left,R.anim.out_right);
                 break;
         }
     }

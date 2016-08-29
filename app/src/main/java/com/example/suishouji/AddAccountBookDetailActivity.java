@@ -112,8 +112,14 @@ public class AddAccountBookDetailActivity extends BaseActivity {
                 break;
             case R.id.account_book_detail_theme:
                 startActivity(new Intent(this,FaceBoardActivity.class));
-                Toast.makeText(AddAccountBookDetailActivity.this, "被点击了", Toast.LENGTH_SHORT).show();
+                overridePendingTransition(R.anim.in_left,R.anim.out_right);
                 break;
         }
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.finish_in_right,R.anim.finish_out_left);
     }
 }
