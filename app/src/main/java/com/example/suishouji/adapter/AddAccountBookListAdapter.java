@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.suishouji.R;
 import com.example.suishouji.bean.AddAccountBookBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
     private Context mContext;
     private OnItemClickListener listener;
 
+    private List<AddAccountViewHolder>  mListViewHolder;
     public void setListener(OnItemClickListener listener) {
         this.listener = listener;
     }
@@ -31,7 +33,7 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
     }
 
     public AddAccountBookListAdapter( Context mContext) {
-
+        mListViewHolder = new ArrayList<>();
         this.mContext = mContext;
     }
     public void updata(List<AddAccountBookBean> mList){
@@ -42,7 +44,9 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
     @Override
     public AddAccountViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView =LayoutInflater.from(mContext).inflate(R.layout.add_acount_book_item,parent,false);
-        return new AddAccountViewHolder(itemView);
+        AddAccountViewHolder holder = new AddAccountViewHolder(itemView);
+        mListViewHolder.add(holder);
+        return holder;
     }
 
     @Override
@@ -65,6 +69,18 @@ public class AddAccountBookListAdapter extends RecyclerView.Adapter<AddAccountBo
         if (listener != null){
             listener.onItemClick(v);
         }
+    }
+
+    public void destroy(){
+        for (int i = 0; i < mListViewHolder.size(); i++) {
+            mListViewHolder.get(i).itemView.setOnClickListener(null);
+        }
+        mListViewHolder.clear();
+        mListViewHolder = null;
+        mList.clear();
+        mList = null;
+        mContext = null;
+        listener = null;
     }
 
     static class AddAccountViewHolder extends RecyclerView.ViewHolder{

@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.suishouji.R;
+import com.example.suishouji.activity.CostActivity;
 import com.example.suishouji.adapter.MainMenuListAdapter;
 import com.example.suishouji.adapter.MainRecyclerAdapter;
 import com.example.suishouji.base.BaseActivity;
@@ -36,6 +38,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity implements ChangeMainTopContentInterface {
 
+    public final static int REQUEST_CODE_CHANGE_THEME = 20;
+    public final static String INTENT_KEY_BOOK = "bean";
 
     private final float CONTENT_HEIGHT = 0.4f;
     private final float MENU_WIDTH = 0.8f;

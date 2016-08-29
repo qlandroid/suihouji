@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.suishouji.CostActivity">
+    tools:context=".activity.CostActivity">
     <FrameLayout
         style="@style/action_bar_style">
         <include layout="@layout/action_bar_title"/>

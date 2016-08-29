@@ -10,7 +10,8 @@ import android.view.Window;
  * Created by Administrator on 2016/8/23.
  */
 public class BaseActivity extends AppCompatActivity {
-
+    public static final int RESULT_CODE_OK = 0x250;
+    public static final int RESULT_CODE_FAIL = 0x251;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

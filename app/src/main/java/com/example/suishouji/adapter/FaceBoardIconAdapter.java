@@ -1,6 +1,7 @@
 package com.example.suishouji.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +19,14 @@ import java.util.List;
  * Created by Administrator on 2016/8/29.
  */
 public class FaceBoardIconAdapter extends RecyclerView.Adapter<FaceBoardIconAdapter.IconViewHolder> implements View.OnClickListener{
-
+    private static final int TEXT_COLOR_1 = Color.BLACK;
+    private static final int TEXT_COLOR_OTHER = Color.WHITE;
     private Context mContext;
-    private IconUtils icons = new IconUtils();
+    private IconUtils icons ;
     private int itemWidth;
     private int itemHeight;
     private OnItemClickListener mListener;
-    private List<IconViewHolder> mListHolder = new ArrayList<>();
+    private List<IconViewHolder> mListHolder ;
     private int mSelectedPosition = 0;
     public interface OnItemClickListener{
         void onItemClick(View v,int position);
@@ -33,10 +35,12 @@ public class FaceBoardIconAdapter extends RecyclerView.Adapter<FaceBoardIconAdap
         this.mListener = mListener;
     }
 
-    public FaceBoardIconAdapter( Context mContext,int itemWidth) {
+    public FaceBoardIconAdapter( Context mContext,int itemWidth,IconUtils icons) {
         this.itemWidth = itemWidth;
         this.mContext = mContext;
+        mListHolder = new ArrayList<>();
         this.itemHeight = (int) (itemWidth/1.5f);
+        this.icons = icons;
     }
 
     @Override
@@ -80,14 +84,18 @@ public class FaceBoardIconAdapter extends RecyclerView.Adapter<FaceBoardIconAdap
         if (mListener!=null){
             mListener.onItemClick(v,position);
         }
+
     }
 
-    public void setSelected(int postion){
-        this.mSelectedPosition = postion;
-        notifyDataSetChanged();
+    public void setSelectedPosition(int position){
+        this.mSelectedPosition = position;
     }
 
-    public int getmSelectedPosition(){
+    public int getTextColor(int position){
+        return position == 1 ?TEXT_COLOR_1 : TEXT_COLOR_OTHER;
+    }
+
+    public int getSelectedPosition(){
         return mSelectedPosition;
     }
 

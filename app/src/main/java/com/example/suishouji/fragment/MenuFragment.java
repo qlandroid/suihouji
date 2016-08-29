@@ -1,7 +1,6 @@
 package com.example.suishouji.fragment;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,10 +18,9 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.suishouji.AddAccountBookActivity;
+import com.example.suishouji.activity.menu.AddAccountBookActivity;
 import com.example.suishouji.R;
 import com.example.suishouji.adapter.MainMenuListAdapter;
-import com.example.suishouji.view.ItemMoveListView;
 import com.example.suishouji.view.MenuButton;
 import com.example.suishouji.view.RoundImageView;
 

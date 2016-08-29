@@ -65,4 +65,6 @@
         <attr name="textSize" format="dimension"/>
         <attr name="imageSize" format="dimension"/>
     </declare-styleable>
+
+
 </resources>

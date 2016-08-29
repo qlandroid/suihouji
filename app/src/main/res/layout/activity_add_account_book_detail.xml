@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/base_background"
-    tools:context=".AddAccountBookDetailActivity">
+    tools:context=".activity.menu.AddAccountBookDetailActivity">
     <FrameLayout
         style="@style/action_bar_style"
-        android:id="@+id/action_bar"
         >
         <include layout="@layout/action_bar_title"/>
         <TextView
@@ -37,6 +36,7 @@
             android:textColor="#353535"
             android:text="@string/add_account_book_detail_account_name"/>
         <EditText
+            android:id="@+id/add_account_book_edit_name_edit_text"
             android:gravity="right"
             android:layout_gravity="center_vertical|right"
             android:layout_width="wrap_content"

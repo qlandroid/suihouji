@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.suishouji.AddAccountBookActivity">
+    tools:context=".activity.menu.AddAccountBookActivity">
     <FrameLayout
         style="@style/action_bar_style">
         <include layout="@layout/action_bar_title"/>

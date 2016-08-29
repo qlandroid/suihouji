@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CostActivity" />
-        <activity android:name=".AddAccountBookActivity" />
-        <activity android:name=".AddAccountBookDetailActivity"></activity>
-        <activity android:name=".FaceBoardActivity"></activity>
+        <activity android:name=".activity.CostActivity" />
+        <activity android:name=".activity.menu.AddAccountBookActivity" />
+        <activity android:name=".activity.menu.AddAccountBookDetailActivity" />
+        <activity android:name=".activity.menu.FaceBoardActivity" />
+        <activity android:name=".activity.menu.FaceBoardRecordActivity"></activity>
     </application>
 
 </manifest>

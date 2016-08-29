@@ -1,10 +1,11 @@
-package com.example.suishouji;
+package com.example.suishouji.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.suishouji.R;
 import com.example.suishouji.base.BaseActivity;
 import com.example.suishouji.view.CostListView;
 import com.handmark.pulltorefresh.library.ILoadingLayout;

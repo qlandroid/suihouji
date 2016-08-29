@@ -10,7 +10,7 @@
     <color name="main_recycler_item_pressed_true">#70fffd83</color>
     <color name="main_recycler_item_pressed_false">#fff</color>
     <color name="baseColor">#e4e4e4</color>
-    <color name="nullColor">#ededed</color>
+    <color name="nullColor">#f5f5f5</color>
     <color name="main_recycler_item_outlay_tv">#33916f</color>
     <color name="main_recycler_item_budget_tv">#b75144</color>
 
@@ -25,5 +25,7 @@
     <color name="main_menu_bottom_button_select_color">#d1b086</color>
     <color name="base_background">#00f8f8f8</color>
 
+    <color name="white_background">#f8f8f8</color>
+    
     <color name="face_board_top_left_text_color">#787878</color>
 </resources>

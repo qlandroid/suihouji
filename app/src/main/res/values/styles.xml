@@ -140,7 +140,7 @@
         <item name="android:textColor">@color/face_board_top_left_text_color</item>
     </style>
     <style name="face_board_title_text_style">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/face_board_top_left_text_color</item>
     </style>
     <style name="face_board_content_icon_style">
@@ -148,6 +148,7 @@
         <item name="android:layout_marginLeft">@dimen/action_bar_icon_padding</item>
     </style>
     <style name="face_board_title_layout_style">
+        <item name="android:background">@color/white_background</item>
         <item name="android:paddingTop">@dimen/face_board_content_title_paddingTop</item>
         <item name="android:paddingLeft">@dimen/action_bar_padding</item>
         <item name="android:paddingRight">@dimen/action_bar_padding</item>

@@ -1,22 +1,15 @@
 package com.example.suishouji.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.suishouji.MainActivity;
 import com.example.suishouji.R;
-import com.example.suishouji.bean.MainMenuItemBean;
-import com.example.suishouji.utils.CommonAdapter;
-import com.example.suishouji.view.ItemMoveListView;
 
 import java.util.List;
 

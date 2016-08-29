@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.suishouji.FaceBoardActivity">
+    tools:context=".activity.menu.FaceBoardActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:id="@+id/face_board_content_1"
+                        android:id="@+id/face_board_content_0"
                         style="@style/face_board_content_content_text_style"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:id="@+id/face_board_content_2"
+                        android:id="@+id/face_board_content_1"
                         style="@style/face_board_content_content_text_style"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
@@ -143,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:id="@+id/face_board_content_3"
+                        android:id="@+id/face_board_content_2"
                         style="@style/face_board_content_content_text_style"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"

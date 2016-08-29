@@ -23,5 +23,11 @@
     <string name="face_board_content_title_1">数据自定义</string>
     <string name="face_board_content_title_2">背景图片选择</string>
 
+    <string-array name="face_board_record_action_title">
+        <item>面板数据1</item>
+        <item>面板数据2</item>
+        <item>面板数据3</item>
+    </string-array>
+
 
 </resources>

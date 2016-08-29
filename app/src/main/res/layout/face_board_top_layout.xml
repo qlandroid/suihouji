@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="@drawable/shape_faceboard_top"
+    android:background="@drawable/shape_face_board_top"
     android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
@@ -35,7 +35,7 @@
         style="@style/face_board_top_board_text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/expand"
+        android:layout_above="@+id/board_0"
         android:layout_marginBottom="16dp"
         android:text="@string/face_board_top_left_1" />
 
@@ -44,7 +44,7 @@
         android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
         android:layout_alignTop="@+id/text_1"
         android:layout_toRightOf="@+id/text_1"
-        android:layout_alignRight="@+id/budget"
+        android:layout_alignRight="@+id/board_2"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginRight="19dp"
@@ -57,40 +57,40 @@
         style="@style/face_board_top_board_text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/expand"
+        android:layout_alignTop="@+id/board_0"
         android:text="@string/face_board_top_left_2" />
 
     <View
         android:id="@+id/view_expand"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
-        android:layout_alignTop="@+id/expand"
+        android:layout_alignTop="@+id/board_0"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
-        android:layout_toLeftOf="@+id/expand"
+        android:layout_toLeftOf="@+id/board_0"
         android:layout_toRightOf="@id/text_2"
         style="@style/face_board_top_view_background"/>
 
 
     <TextView
-        android:id="@+id/expand"
+        android:id="@+id/board_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/expand_number"
-        android:layout_alignLeft="@+id/expand_number"
+        android:layout_above="@+id/board_number_0"
+        android:layout_alignLeft="@+id/board_number_0"
         android:text="@string/expend"
         android:textSize="@dimen/face_board_top_icon_text_title_size" />
 
     <TextView
-        android:id="@+id/expand_number"
+        android:id="@+id/board_number_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/income"
-        android:layout_alignLeft="@+id/income"
+        android:layout_above="@+id/income_layout"
+        android:layout_alignLeft="@+id/income_layout"
         android:text="200.00" />
 
     <LinearLayout
-        android:id="@+id/income"
+        android:id="@+id/income_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/icon"
@@ -100,6 +100,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/board_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -107,7 +108,7 @@
             android:textSize="@dimen/face_board_top_icon_text_title_size" />
 
         <TextView
-            android:id="@+id/income_number"
+            android:id="@+id/board_number_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="200.00"
@@ -115,21 +116,21 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/budget"
+        android:id="@+id/board_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/budget_number"
-        android:layout_alignTop="@+id/budget_number"
-        android:layout_toLeftOf="@+id/budget_number"
+        android:layout_alignBottom="@+id/board_number_2"
+        android:layout_alignTop="@+id/board_number_2"
+        android:layout_toLeftOf="@+id/board_number_2"
         android:gravity="center"
         android:text="@string/budget_balance"
         android:textSize="@dimen/face_board_top_icon_text_title_size" />
 
     <TextView
-        android:id="@+id/budget_number"
+        android:id="@+id/board_number_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/income"
+        android:layout_alignBottom="@+id/income_layout"
         android:layout_alignRight="@+id/icon"
         android:layout_marginRight="@dimen/face_board_top_icon_margin"
         android:text="200.00"
@@ -141,8 +142,8 @@
         android:layout_width="100dp"
         android:layout_below="@+id/view_budget_0"
         android:layout_height="match_parent"
-        android:layout_above="@+id/budget"
-        android:layout_alignRight="@+id/budget"
+        android:layout_above="@+id/board_2"
+        android:layout_alignRight="@+id/board_2"
         android:layout_gravity="center_horizontal"
         android:layout_marginRight="-30dp"
         android:background="@drawable/shape_view_dotline_shu" />
@@ -153,16 +154,16 @@
         android:textSize="@dimen/face_board_top_left_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/income"
+        android:layout_alignTop="@+id/income_layout"
         android:text="@string/face_board_top_left_3" />
 
     <View
         android:layout_width="wrap_content"
         android:layout_height="5dp"
-        android:layout_alignTop="@+id/income"
+        android:layout_alignTop="@+id/income_layout"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="@dimen/face_board_top_icon_view_margin_top"
-        android:layout_toLeftOf="@id/expand"
+        android:layout_toLeftOf="@id/board_0"
         android:layout_toRightOf="@id/text_3"
         style="@style/face_board_top_view_background" />
 </RelativeLayout>
