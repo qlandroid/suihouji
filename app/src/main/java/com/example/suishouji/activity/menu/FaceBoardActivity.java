@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -258,6 +259,8 @@ public class FaceBoardActivity extends BaseActivity implements FaceBoardIconAdap
                 toBack();
                 break;
             case R.id.action_bar_content_layout://actionBar中间的按键
+                showPopupWindow();
+
                 break;
             case R.id.face_board_1:
                 int boardType0 = mBean.getFaceBoardType0();
@@ -272,6 +275,13 @@ public class FaceBoardActivity extends BaseActivity implements FaceBoardIconAdap
                 startFaceBoardRecordActivity(REQUEST_BOARD_3, 2,boardType2);
                 break;
         }
+
+    }
+
+    /**
+     * 显示一个PopupWindow
+     */
+    private void showPopupWindow() {
 
     }
 

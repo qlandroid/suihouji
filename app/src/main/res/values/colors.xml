@@ -26,6 +26,7 @@
     <color name="base_background">#00f8f8f8</color>
 
     <color name="white_background">#f8f8f8</color>
-    
+    <color name="baseTextTitleColor">#394042</color>
+    <color name="baseTextContentColor">#767e89</color>
     <color name="face_board_top_left_text_color">#787878</color>
 </resources>

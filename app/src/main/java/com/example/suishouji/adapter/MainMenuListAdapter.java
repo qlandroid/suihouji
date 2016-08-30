@@ -1,6 +1,7 @@
 package com.example.suishouji.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.suishouji.R;
+import com.example.suishouji.view.ItemMoveListView;
 
 import java.util.List;
 
@@ -21,6 +23,9 @@ public class MainMenuListAdapter extends BaseAdapter{
     private Context mContext;
     private boolean openSetting = false;
     public int clickPostion = 0;
+
+    private  String selectBackgroundColor ="#fff8d7";
+    private String normalBackgroundColor = "#ffffff";
     public MainMenuListAdapter(Context mContext) {
         this.mContext = mContext;
     }
@@ -56,7 +61,8 @@ public class MainMenuListAdapter extends BaseAdapter{
             holder = (ItemViewHolder) convertView.getTag();
         }
         if (!openSetting)
-            holder.view.setVisibility((clickPostion == position)?View.VISIBLE:View.GONE);
+            holder.colorView.setVisibility((clickPostion == position)?View.VISIBLE:View.GONE);
+            holder.normalLayout.setBackgroundColor((clickPostion == position)? Color.parseColor(selectBackgroundColor):Color.parseColor(normalBackgroundColor));
         showLayout(holder);
 
         return convertView;
@@ -79,9 +85,10 @@ public class MainMenuListAdapter extends BaseAdapter{
         LinearLayout openLayout;
         TextView bookNameTxteView;
         RelativeLayout normalLayout;
-        View view;
+        View colorView;
         public ItemViewHolder(View view) {
-            this.view = view.findViewById(R.id.main_menu_list_item_view);
+            this.colorView = view.findViewById(R.id.main_menu_list_item_view);
+            view.findViewById(R.id.main_menu_list_item_normal_layout);
             normalLayout = (RelativeLayout) view.findViewById(R.id.main_menu_list_item_normal_layout);
             openLayout = (LinearLayout)view.findViewById(R.id.main_menu_list_item_open_layout);
             bookNameTxteView = (TextView) view.findViewById(R.id.main_menu_list_item_book_name_normal_tv);

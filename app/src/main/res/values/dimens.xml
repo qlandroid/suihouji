@@ -8,6 +8,12 @@
     <dimen name="action_bar_icon_size">20dp</dimen>
     <dimen name="action_bar_icon_padding">10dp</dimen>
 
+    <dimen name="base_text_title_size">14sp</dimen>
+    <dimen name="base_text_content_size">12sp</dimen>
+    <dimen name="base_distance_top">4dp</dimen>
+    <dimen name="base_margin">20dp</dimen>
+    <dimen name="base_icon_size">30dp</dimen>
+
     <dimen name="view_divider">1dp</dimen>
     <dimen name="view_size_small">0.5dp</dimen>
     <dimen name="text_view_base_size">16sp</dimen>
@@ -19,4 +25,10 @@
     <dimen name="face_board_top_icon_margin">8dp</dimen>
     <dimen name="face_board_top_left_text_size">12sp</dimen>
     <dimen name="face_board_content_title_paddingTop">20dp</dimen>
+
+    <dimen name="look_board_list_change_bottom_text_margin">8dp</dimen>
+    <dimen name="look_board_list_change_item_icon_size">30dp</dimen>
+    <dimen name="look_board_list_change_item_icon_margin">20dp</dimen>
+
+    <dimen name="main_look_board_icon_size">30dp</dimen>
 </resources>

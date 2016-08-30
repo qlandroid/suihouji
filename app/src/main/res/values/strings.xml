@@ -29,5 +29,6 @@
         <item>面板数据3</item>
     </string-array>
 
+    <string name="change_board_title">定制首页下看板</string>
 
 </resources>

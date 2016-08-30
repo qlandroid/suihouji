@@ -9,7 +9,7 @@
         android:layout_alignTop="@+id/main_menu_list_item_book_normal_layout"
         android:layout_alignBottom="@+id/main_menu_list_item_book_normal_layout"
         android:layout_height="wrap_content"
-        android:background="#63ffb1" />
+        android:background="#f8b551" />
     <LinearLayout
         android:id="@+id/main_menu_list_item_book_normal_layout"
         android:layout_width="wrap_content"

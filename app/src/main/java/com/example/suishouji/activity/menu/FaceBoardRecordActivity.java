@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -47,23 +48,29 @@ public class FaceBoardRecordActivity extends BaseActivity implements View.OnClic
         int boardType = intent.getIntExtra(INTENT_KEY_BOARD_TYPE,0);
         initActionTitle(titleType);
 
-        toBack.setOnClickListener(this);
-
+        addListener();
         initRecyclerView();
 
         initItemShowIcon(boardType);
 
     }
 
+    private void addListener() {
+        toBack.setOnClickListener(this);
+
+    }
+
+    private static final String TAG = "FaceBoardRecordActivity";
     private void initItemShowIcon(int boardType){
+        Log.i(TAG, "initItemShowIcon: " + boardType);
         if (boardType >= BoardInfo.boardMonth.length){
+            //是year
+            monthAdapter.setHideIcon();
+            yearAdapter.setShowIconPosition(BoardInfo.getBoardYearTypeSub(boardType));
+        }else {
             //是month
             yearAdapter.setHideIcon();
             monthAdapter.setShowIconPosition(boardType);
-        }else {
-            //是year
-            monthAdapter.setHideIcon();
-            yearAdapter.setShowIconPosition(BoardInfo.getBoardYearType(boardType));
         }
     }
 
@@ -125,9 +132,9 @@ public class FaceBoardRecordActivity extends BaseActivity implements View.OnClic
                 break;
             case TYPE_ADAPTER_YEAR:
             default:
-                monthAdapter.setShowIconPosition(position);
+                yearAdapter.setShowIconPosition(position);
                 monthAdapter.setHideIcon();
-                boardType = BoardInfo.getBoardYearType(position);
+                boardType = BoardInfo.getBoardYearTypeAdd(position);
 
         }
         yearAdapter.notifyDataSetChanged();

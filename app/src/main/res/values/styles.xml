@@ -53,7 +53,6 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="main_content_top_iv_base_size">
-        <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_width">26dp</item>
         <item name="android:layout_height">26dp</item>
     </style>
@@ -150,7 +149,7 @@
     <style name="face_board_title_layout_style">
         <item name="android:background">@color/white_background</item>
         <item name="android:paddingTop">@dimen/face_board_content_title_paddingTop</item>
-        <item name="android:paddingLeft">@dimen/action_bar_padding</item>
+        <item name="android:paddingLeft">@dimen/base_margin</item>
         <item name="android:paddingRight">@dimen/action_bar_padding</item>
         <item name="android:paddingBottom">@dimen/action_bar_padding</item>
     </style>
@@ -161,5 +160,11 @@
         <item name="android:paddingTop">@dimen/action_bar_padding</item>
         <item name="android:paddingRight">@dimen/action_bar_padding</item>
         <item name="android:paddingLeft">15dp</item>
+    </style>
+
+    <style name="face_board_change_list_bottom_text_style">
+        <item name="android:layout_marginLeft">@dimen/base_margin</item>
+        <item name="android:layout_marginTop">@dimen/look_board_list_change_bottom_text_margin</item>
+        <item name="android:layout_marginBottom">@dimen/look_board_list_change_bottom_text_margin</item>
     </style>
 </resources>

@@ -130,8 +130,6 @@ public class AddAccountBookDetailActivity extends BaseActivity {
 
     }
 
-
-
     /**
      * 点击保存关闭页面
      *

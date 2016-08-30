@@ -20,6 +20,34 @@ public class AddAccountBookBean implements Serializable{
     private int faceBoardType1 = 0;
     private int faceBoardType2 = 2;
 
+    private String boardNumber0 = "0.00";
+    private String boardNumber1 = "0.00";
+    private String boardNumber2 = "0.00";
+
+    public String getBoardNumber0() {
+        return boardNumber0;
+    }
+
+    public void setBoardNumber0(String boardNumber0) {
+        this.boardNumber0 = boardNumber0;
+    }
+
+    public String getBoardNumber1() {
+        return boardNumber1;
+    }
+
+    public void setBoardNumber1(String boardNumber1) {
+        this.boardNumber1 = boardNumber1;
+    }
+
+    public String getBoardNumber2() {
+        return boardNumber2;
+    }
+
+    public void setBoardNumber2(String boardNumber2) {
+        this.boardNumber2 = boardNumber2;
+    }
+
     public int getFaceBoardType0() {
         return faceBoardType0;
     }

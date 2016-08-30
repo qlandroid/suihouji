@@ -2,6 +2,7 @@ package com.example.suishouji.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,11 +70,13 @@ public class FaceBoardTextAdapter extends RecyclerView.Adapter<FaceBoardTextAdap
         holder.itemView.setOnClickListener(this);
 
         holder.text.setText(texts[position]);
-
+        Log.i("mtag", "onBindViewHolder: " + showIconPosition  +" -----"+position);
         if (showIconPosition == position){
             holder.icon.setVisibility(View.VISIBLE);
+            Log.i("mtag", "onBindViewHolder: visible ");
         }else {
             holder.icon.setVisibility(View.GONE);
+            Log.i("mtag", "onBindViewHolder:  gone");
         }
 
     }

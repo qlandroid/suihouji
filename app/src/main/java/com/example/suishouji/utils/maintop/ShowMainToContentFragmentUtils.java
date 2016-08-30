@@ -19,16 +19,7 @@ public class ShowMainToContentFragmentUtils implements ShowMainTopContentInterfa
 
     @Override
     public void showTopContentFragment(FragmentManager manager,int layoutId) {
-        SharedPreferences shared = mContext.getSharedPreferences(MainTopContentThemeInfo.SHARED_THEME_NAME
-                , mContext.MODE_PRIVATE);
-        int topContentThemeKey = shared.getInt(MainTopContentThemeInfo.SHARED_THEME_KEY,0);
-        switch (topContentThemeKey){
-            case MainTopContentThemeInfo.THEME_DEFAULT://默认
-                manager.beginTransaction().add(layoutId,new MainTopFragment()).commit();
-                break;
-            case MainTopContentThemeInfo.THEME_OTHER://其他
-                break;
-        }
+
     }
 
     @Override

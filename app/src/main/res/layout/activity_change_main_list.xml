@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.suishouji.activity.ChangeMainListActivity">
+    <FrameLayout
+        style="@style/action_bar_style"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+        <include layout="@layout/action_bar_title"/>
+    </FrameLayout>
+    <ScrollView
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                style="@style/face_board_title_layout_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/face_board_title_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="首页下看板" />
+            </FrameLayout>
+            <include layout="@layout/view_divider"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/showList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/view_divider"/>
+            <FrameLayout
+                style="@style/face_board_title_layout_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/face_board_title_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="可添加看板" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/styleType0_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/view_divider"/>
+                <TextView
+                    style="@style/face_board_change_list_bottom_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间流水"/>
+                <include layout="@layout/view_divider"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/styleType0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/styleType1_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/view_divider"/>
+                <TextView
+                    style="@style/face_board_change_list_bottom_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="理财"/>
+                <include layout="@layout/view_divider"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/styleType1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/styleType2_layout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/view_divider"/>
+                <TextView
+                    style="@style/face_board_change_list_bottom_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="超级流水"/>
+                <include layout="@layout/view_divider"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/styleType2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -13,9 +13,9 @@ public class BoardInfo {
             "净资产"};
     public static String getBoardText(int type){
         if (type >= boardMonth.length && (type - boardMonth.length)<boardYear.length){
-            return boardYear[(type-boardMonth.length)];
+            return BoardInfo.boardYear[(type-boardMonth.length)];
         }else if (type >= 0 && type<boardMonth.length){
-            return boardMonth[type];
+            return BoardInfo.boardMonth[type];
         }
         return null;
     }
@@ -25,9 +25,13 @@ public class BoardInfo {
      * @param position
      * @return
      */
-    public static int getBoardYearType(int position){
-        int boardYearPosition = position + boardMonth.length;
+    public static int getBoardYearTypeSub(int position){
+        int boardYearPosition = position - boardMonth.length;
         return boardYearPosition;
+    }
+
+    public static int getBoardYearTypeAdd(int position){
+        return position+boardMonth.length;
     }
     public static int getBoarMonthType(int position){
         return position;
